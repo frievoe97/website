@@ -20,7 +20,7 @@
             id="name"
             v-model="formData.name"
             :class="{
-              'w-full p-2 border rounded border-black': !darkMode,
+              'w-full p-2 border rounded border-black bg-gray-100': !darkMode,
               'w-full p-2 border rounded text-white bg-gray-800': darkMode,
             }"
             required
@@ -42,7 +42,7 @@
             id="email"
             v-model="formData.email"
             :class="{
-              'w-full p-2 border rounded border-black': !darkMode,
+              'w-full p-2 border rounded border-black bg-gray-100': !darkMode,
               'w-full p-2 border rounded text-white bg-gray-800': darkMode,
             }"
             required
@@ -63,7 +63,7 @@
             id="message"
             v-model="formData.message"
             :class="{
-              'w-full p-2 border rounded border-black': !darkMode,
+              'w-full p-2 border rounded border-black bg-gray-100': !darkMode,
               'w-full p-2 border rounded text-white bg-gray-800': darkMode,
             }"
             rows="4"

@@ -17,11 +17,23 @@
       <!-- Pfeil und Unterschrift "Projekte" -->
       <div class="flex flex-col items-center mt-auto mb-8">
         <!-- Hier wurde mt-auto und mb-8 hinzugefügt -->
-        <font-awesome-icon
-          icon="arrow-down"
-          class="text-gray-800 dark:text-white text-3xl mb-2"
-          @click="scrollToProjectPage"
-        />
+        <transition name="bounce">
+          <font-awesome-icon
+            v-if="!showBounceAnimation"
+            icon="arrow-down"
+            class="text-gray-800 dark:text-white text-3xl mb-2 cursor-pointer"
+            @click="scrollToProjectPage"
+          />
+          <font-awesome-icon
+            v-else
+            icon="arrow-down"
+            class="text-gray-800 dark:text-white text-3xl mb-2 cursor-pointer"
+            :style="{
+              animation: 'bounce 4s infinite cubic-bezier(0.5, 0, 1, 1)',
+            }"
+            @click="scrollToProjectPage"
+          />
+        </transition>
         <span
           :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
           class="text-lg"
@@ -34,6 +46,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      showBounceAnimation: true,
+    };
+  },
   computed: {
     darkMode() {
       return this.$store.state.darkMode; // Zugriff auf den darkMode-Wert aus dem Store
@@ -51,4 +68,31 @@ export default {
 
 <style>
 /* Hinzufügen von benutzerdefinierten CSS-Stilen hier, falls erforderlich */
+
+/* Hinzufügen der Bounce-Animation für den Pfeil */
+@keyframes bounce {
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-5px);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  70% {
+    transform: translateY(-10px);
+  }
+  90% {
+    transform: translateY(-5px);
+  }
+}
 </style>

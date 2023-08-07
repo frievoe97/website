@@ -1,6 +1,6 @@
 <template>
   <div id="project-page" :class="{ dark: darkMode }">
-    <div class="min-h-screen w-screen">
+    <div class="w-screen">
       <div class="container mx-auto p-8">
         <h2
           :class="{ 'text-black': !darkMode, 'text-white': darkMode }"

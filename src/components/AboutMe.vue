@@ -1,23 +1,29 @@
 <template>
   <div id="about-me-page" :class="{ dark: darkMode }">
-    <div class="w-screen max-w-full mx-auto p-8">
+    <div class="w-screen max-w-full mx-auto p-4">
       <div class="flex flex-col items-center">
-        <div class="w-24 h-24 rounded-full overflow-hidden">
-          <img
-            :src="imageSrc"
-            alt="Profilbild"
-            class="object-cover w-full h-full"
-          />
-        </div>
         <h2
           :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
           class="text-4xl font-semibold mt-4"
         >
           Über mich
         </h2>
+        <div class="w-24 h-24 rounded-full overflow-hidden mt-4">
+          <img
+            :src="imageSrc"
+            alt="Profilbild"
+            class="object-cover w-full h-full"
+          />
+        </div>
         <p
-          :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
-          class="text-lg mt-2"
+          :class="{
+            'text-black': !darkMode,
+            'text-white': darkMode,
+            'text-lg': !isMobile,
+            'text-base': isMobile,
+            'max-w-3xl': !isMobile,
+          }"
+          class="mt-4 text-justify"
         >
           {{ aboutText }}
         </p>
@@ -98,6 +104,12 @@ export default {
   computed: {
     darkMode() {
       return this.$store.state.darkMode; // Zugriff auf den darkMode-Wert aus dem Store
+    },
+    isMobile() {
+      // Überprüfung, ob das Gerät als Mobilgerät erkannt wurde
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
     },
   },
 };
