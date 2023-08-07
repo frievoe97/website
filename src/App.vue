@@ -12,9 +12,9 @@ import Navbar from "./components/Navbar.vue";
     <div class="bg-gray-100 dark:bg-gray-800">
       <Navbar />
       <Startseite />
-      <Projekte />
-      <KontaktFormular />
-      <AboutMe />
+      <Projekte class="pb-32" />
+      <KontaktFormular class="pb-32" />
+      <AboutMe class="pb-32" />
       <Footer />
     </div>
   </div>

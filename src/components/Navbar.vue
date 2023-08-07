@@ -1,131 +1,160 @@
 <template>
-  <nav
-    :class="{
-      'bg-white': !darkMode,
-      'bg-gray-900': darkMode,
-    }"
-    class="fixed top-0 left-0 right-0 p-4 shadow-lg flex flex-col md:flex-row justify-between items-center"
-  >
-    <!-- Logo oder Titel -->
-    <div
+  <div class="navbar-container fixed top-0 left-0 right-0">
+    <nav
       :class="{
-        'mb-1': isMobile,
+        'bg-white': !darkMode,
+        'bg-gray-900': darkMode,
       }"
-      class="text-xl font-semibold"
+      class="p-4 shadow-lg flex flex-col md:flex-row justify-between items-center"
     >
-      <span
-        :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
-        @click="scrollToStartPage"
-      >
-        Friedrich Völkers
-      </span>
-    </div>
-
-    <!-- Menü und Buttons -->
-    <div
-      v-if="showMenu"
-      :class="{
-        'space-x-0': isMobile,
-        'space-x-4': !isMobile,
-      }"
-      class="md:mt-0 md:flex items-center"
-    >
-      <!-- Menüpunkte -->
-      <ul
-        :class="{
-          'text-black': !darkMode,
-          'text-white': darkMode,
-          'space-x-0': isMobile,
-          'space-x-4': !isMobile,
-        }"
-        class="flex flex-col md:flex-row space-x-4"
-      >
-        <li
-          @click="scrollToStartPage"
-          :class="{
-            'text-black': !darkMode,
-            'text-white': darkMode,
-            'mb-1': isMobile,
-          }"
-          class="flex items-center justify-center"
-        >
-          <a :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
-            >Home</a
-          >
-        </li>
-        <li
-          @click="scrollToProjectPage"
-          :class="{
-            'text-black': !darkMode,
-            'text-white': darkMode,
-            'mb-1': isMobile,
-          }"
-          class="flex items-center justify-center"
-        >
-          <a :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
-            >Projekte</a
-          >
-        </li>
-        <li
-          @click="scrollToContactPage"
-          :class="{
-            'text-black': !darkMode,
-            'text-white': darkMode,
-            'mb-1': isMobile,
-          }"
-          class="flex items-center justify-center"
-        >
-          <a :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
-            >Contact</a
-          >
-        </li>
-        <li
-          @click="scrollToAboutMePage"
-          :class="{
-            'text-black': !darkMode,
-            'text-white': darkMode,
-            'mb-1': isMobile,
-          }"
-          class="flex items-center justify-center"
-        >
-          <a :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
-            >About Me</a
-          >
-        </li>
-      </ul>
-
-      <!-- Buttons -->
+      <!-- Logo oder Titel -->
       <div
         :class="{
+          'mb-1': isMobile,
+        }"
+        class="text-xl font-semibold"
+      >
+        <span
+          :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
+          @click="scrollToStartPage"
+        >
+          Friedrich Völkers
+        </span>
+      </div>
+
+      <!-- Menü und Buttons -->
+      <div
+        v-if="showMenu"
+        :class="{
           'space-x-0': isMobile,
           'space-x-4': !isMobile,
         }"
-        class="items-center relative flex justify-around"
+        class="md:mt-0 md:flex items-center"
       >
-        <font-awesome-icon
-          icon="circle-half-stroke"
-          class="text-xl cursor-pointer"
-          @click="toggleDarkMode"
-          v-bind:style="[darkMode ? { color: '#ffffff' } : {}]"
-        />
-        <font-awesome-icon
-          icon="language"
-          class="text-xl cursor-pointer"
-          @click="toggleLanguageDropdown"
-          v-bind:style="[darkMode ? { color: '#ffffff' } : {}]"
-        />
-        <!-- Dropdown-Menü für Sprachauswahl -->
-        <transition name="fade">
-          <div
-            v-if="showLanguageDropdown"
-            class="absolute top-10 right-0 mt-2 bg-white dark:bg-gray-900 rounded shadow-lg"
+        <!-- Menüpunkte -->
+        <ul
+          :class="{
+            'text-black': !darkMode,
+            'text-white': darkMode,
+            'space-x-0': isMobile,
+            'space-x-4': !isMobile,
+          }"
+          class="flex flex-col md:flex-row"
+        >
+          <li
+            @click="scrollToStartPage"
+            :class="{
+              'text-black': !darkMode,
+              'text-white': darkMode,
+              'mb-1': isMobile,
+            }"
+            class="flex items-center justify-center"
           >
-            <!-- ... -->
-          </div>
-        </transition>
+            <a :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
+              >Home</a
+            >
+          </li>
+          <li
+            @click="scrollToProjectPage"
+            :class="{
+              'text-black': !darkMode,
+              'text-white': darkMode,
+              'mb-1': isMobile,
+            }"
+            class="flex items-center justify-center"
+          >
+            <a :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
+              >Projekte</a
+            >
+          </li>
+          <li
+            @click="scrollToContactPage"
+            :class="{
+              'text-black': !darkMode,
+              'text-white': darkMode,
+              'mb-1': isMobile,
+            }"
+            class="flex items-center justify-center"
+          >
+            <a :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
+              >Contact</a
+            >
+          </li>
+          <li
+            @click="scrollToAboutMePage"
+            :class="{
+              'text-black': !darkMode,
+              'text-white': darkMode,
+              'mb-2': isMobile,
+            }"
+            class="flex items-center justify-center"
+          >
+            <a :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
+              >About Me</a
+            >
+          </li>
+        </ul>
+
+        <!-- Buttons -->
+        <div
+          :class="{
+            'space-x-0': isMobile,
+            'space-x-4': !isMobile,
+          }"
+          class="items-center relative flex justify-around"
+        >
+          <font-awesome-icon
+            icon="circle-half-stroke"
+            class="text-xl cursor-pointer"
+            @click="toggleDarkMode"
+            v-bind:style="[darkMode ? { color: '#ffffff' } : {}]"
+          />
+          <font-awesome-icon
+            icon="language"
+            class="text-xl cursor-pointer"
+            v-bind:style="[darkMode ? { color: '#ffffff' } : {}]"
+            @click="toggleLanguageDropdown"
+          />
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+    <!-- Dropdown-Menü für Sprachauswahl -->
+    <transition name="fade">
+      <div
+        v-if="showLanguageDropdown"
+        :class="{
+          'language-dropdown-mobile': isMobile,
+          'language-dropdown-non-mobile': !isMobile,
+        }"
+        class="w-full md:w-auto bg-white dark:bg-gray-900 rounded shadow-lg"
+      >
+        <ul class="py-2 md:flex md:space-x-4">
+          <li
+            v-for="(language, index) in languages"
+            :key="index"
+            :class="{
+              'text-black': !darkMode,
+              'text-white': darkMode,
+              'bg-blue-500': isLanguageSelected(language.code),
+              'hover:bg-blue-500':
+                hoveredLanguage === language.code &&
+                !isLanguageSelected(language.code),
+              'hover:text-white':
+                hoveredLanguage === language.code &&
+                !isLanguageSelected(language.code),
+              'cursor-pointer': !isLanguageSelected(language.code),
+            }"
+            @mouseenter="hoveredLanguage = language.code"
+            @mouseleave="hoveredLanguage = null"
+            @click="selectLanguage(language.code)"
+            class="px-4 py-2 cursor-pointer"
+          >
+            {{ language.name }}
+          </li>
+        </ul>
+      </div>
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -137,8 +166,8 @@ export default {
   },
   data() {
     return {
+      showLanguageDropdown: false,
       isGerman: false,
-      showLanguageDropdown: true,
       languages: [
         { code: "de", name: "Deutsch" },
         { code: "en", name: "English" },
@@ -162,17 +191,6 @@ export default {
   methods: {
     toggleDarkMode() {
       this.$store.commit("setDarkMode", !this.darkMode);
-    },
-    toggleLanguageDropdown() {
-      this.showLanguageDropdown = !this.showLanguageDropdown;
-    },
-    selectLanguage(languageCode) {
-      this.selectedLanguage = languageCode;
-      this.showLanguageDropdown = false;
-      this.$store.commit("setSelectedLanguage", languageCode); // Speichern der ausgewählten Sprache im Store
-    },
-    isLanguageSelected(languageCode) {
-      return this.selectedLanguage === languageCode;
     },
     scrollToStartPage() {
       this.toggleMenu();
@@ -202,15 +220,23 @@ export default {
       this.isMobile = window.innerWidth < 768;
       if (!this.isMobile) this.showMenu = true;
     },
+    toggleLanguageDropdown() {
+      this.showLanguageDropdown = !this.showLanguageDropdown;
+    },
+    isLanguageSelected(languageCode) {
+      return this.selectedLanguage === languageCode;
+    },
+    selectLanguage(languageCode) {
+      this.selectedLanguage = languageCode;
+      this.showLanguageDropdown = false;
+      this.$store.commit("setSelectedLanguage", languageCode);
+    },
   },
 };
 </script>
 
 <style>
-/* Hinzufügen von benutzerdefinierten CSS-Stilen hier, falls erforderlich */
-nav {
-  z-index: 10;
-}
+/* Rest des Codes bleibt unverändert */
 
 /* Fade-Transition für das Dropdown-Menü */
 .fade-enter-active,
@@ -219,5 +245,25 @@ nav {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
   opacity: 0;
+}
+
+.language-dropdown-non-mobile {
+  width: min-content;
+  margin: 10px;
+  margin-left: auto;
+  border-radius: 10px;
+}
+
+.language-dropdown-non-mobile > ul {
+  padding: 0;
+}
+
+.language-dropdown-non-mobile > ul > li {
+  border-radius: 10px;
+  margin: 0 !important;
+}
+
+.navbar-container {
+  z-index: 40;
 }
 </style>

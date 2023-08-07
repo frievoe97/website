@@ -15,7 +15,7 @@
       </div>
 
       <!-- Pfeil und Unterschrift "Projekte" -->
-      <div class="flex flex-col items-center mt-auto mb-8">
+      <div class="flex flex-col items-center mt-auto mb-20">
         <!-- Hier wurde mt-auto und mb-8 hinzugefügt -->
         <transition name="bounce">
           <font-awesome-icon
