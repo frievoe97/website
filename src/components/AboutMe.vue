@@ -6,7 +6,7 @@
           :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
           class="text-4xl font-semibold mt-4"
         >
-          Über mich
+          {{ $t("aboutMe.title") }}
         </h2>
         <div class="w-24 h-24 rounded-full overflow-hidden mt-4">
           <img
@@ -25,7 +25,7 @@
           }"
           class="mt-4 text-justify"
         >
-          {{ aboutText }}
+          {{ $t("aboutMe.text") }}
         </p>
       </div>
 

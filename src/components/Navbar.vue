@@ -50,9 +50,9 @@
             }"
             class="flex items-center justify-center"
           >
-            <a :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
-              >Home</a
-            >
+            <a :class="{ 'text-black': !darkMode, 'text-white': darkMode }">{{
+              $t("navbar.home")
+            }}</a>
           </li>
           <li
             @click="scrollToProjectPage"
@@ -63,9 +63,9 @@
             }"
             class="flex items-center justify-center"
           >
-            <a :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
-              >Projekte</a
-            >
+            <a :class="{ 'text-black': !darkMode, 'text-white': darkMode }">{{
+              $t("navbar.projects")
+            }}</a>
           </li>
           <li
             @click="scrollToContactPage"
@@ -76,9 +76,9 @@
             }"
             class="flex items-center justify-center"
           >
-            <a :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
-              >Contact</a
-            >
+            <a :class="{ 'text-black': !darkMode, 'text-white': darkMode }">{{
+              $t("navbar.contact")
+            }}</a>
           </li>
           <li
             @click="scrollToAboutMePage"
@@ -90,8 +90,8 @@
             class="flex items-center justify-center"
           >
             <a :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
-              >About Me</a
-            >
+              >{{ $t("navbar.aboutMe") }}
+            </a>
           </li>
         </ul>
 
@@ -128,7 +128,7 @@
         }"
         class="w-full md:w-auto bg-white dark:bg-gray-900 rounded shadow-lg"
       >
-        <ul class="py-2 md:flex md:space-x-4">
+        <ul class="py-2 md:flex">
           <li
             v-for="(language, index) in languages"
             :key="index"
@@ -172,7 +172,7 @@ export default {
         { code: "de", name: "Deutsch" },
         { code: "en", name: "English" },
       ],
-      selectedLanguage: "de", // Standardmäßig Deutsch ausgewählt
+      selectedLanguage: "en", // Standardmäßig Deutsch ausgewählt
       hoveredLanguage: null, // Aktuell gehoverte Sprache
       showMenu: true, // Für Handys: Anzeigen des Menüs
       isMobile: false,
@@ -230,6 +230,7 @@ export default {
       this.selectedLanguage = languageCode;
       this.showLanguageDropdown = false;
       this.$store.commit("setSelectedLanguage", languageCode);
+      this.$i18n.locale = languageCode;
     },
   },
 };
@@ -260,7 +261,6 @@ export default {
 
 .language-dropdown-non-mobile > ul > li {
   border-radius: 10px;
-  margin: 0 !important;
 }
 
 .navbar-container {

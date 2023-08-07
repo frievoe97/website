@@ -6,7 +6,7 @@
           :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
           class="text-4xl font-semibold text-center mb-8"
         >
-          Meine Projekte
+          {{ $t("projects.title") }}
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Projekt Card -->

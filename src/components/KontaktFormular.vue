@@ -5,7 +5,7 @@
         :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
         class="text-4xl font-semibold text-center mb-8"
       >
-        Kontakt
+        {{ $t("contact.title") }}
       </h2>
       <form @submit.prevent="submitForm" class="max-w-md mx-auto">
         <div class="mb-4">
@@ -57,7 +57,7 @@
             }"
             for="message"
             class="block font-semibold mb-1"
-            >Nachricht</label
+            >{{ $t("contact.message") }}</label
           >
           <textarea
             id="message"
@@ -79,7 +79,7 @@
             'bg-inherit hover:bg-gray-800 text-white border-white': darkMode,
           }"
         >
-          Senden
+          {{ $t("contact.send") }}
         </button>
       </form>
     </div>
