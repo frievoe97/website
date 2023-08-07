@@ -1,6 +1,6 @@
 <template>
   <div id="contact-page" :class="{ dark: darkMode }">
-    <div class="">
+    <div class="mx-4">
       <h2
         :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
         class="text-4xl font-semibold text-center mb-8"
@@ -20,7 +20,7 @@
             id="name"
             v-model="formData.name"
             :class="{
-              'w-full p-2 border rounded': !darkMode,
+              'w-full p-2 border rounded border-black': !darkMode,
               'w-full p-2 border rounded text-white bg-gray-800': darkMode,
             }"
             required
@@ -29,7 +29,10 @@
 
         <div class="mb-4">
           <label
-            :class="{ 'text-gray-700': !darkMode, 'text-white': darkMode }"
+            :class="{
+              'text-gray-700 border-black': !darkMode,
+              'text-white': darkMode,
+            }"
             for="email"
             class="block font-semibold mb-1"
             >E-Mail</label
@@ -39,7 +42,7 @@
             id="email"
             v-model="formData.email"
             :class="{
-              'w-full p-2 border rounded': !darkMode,
+              'w-full p-2 border rounded border-black': !darkMode,
               'w-full p-2 border rounded text-white bg-gray-800': darkMode,
             }"
             required
@@ -48,7 +51,10 @@
 
         <div class="mb-4">
           <label
-            :class="{ 'text-gray-700': !darkMode, 'text-white': darkMode }"
+            :class="{
+              'text-gray-700 border-black': !darkMode,
+              'text-white': darkMode,
+            }"
             for="message"
             class="block font-semibold mb-1"
             >Nachricht</label
@@ -57,7 +63,7 @@
             id="message"
             v-model="formData.message"
             :class="{
-              'w-full p-2 border rounded': !darkMode,
+              'w-full p-2 border rounded border-black': !darkMode,
               'w-full p-2 border rounded text-white bg-gray-800': darkMode,
             }"
             rows="4"
@@ -68,10 +74,9 @@
         <button
           type="submit"
           :class="{
-            'bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded':
-              !darkMode,
-            'bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded':
-              darkMode,
+            'border px-4 py-2 rounded w-full': true,
+            'bg-inherit hover:bg-gray-600 text-black border-black': !darkMode,
+            'bg-inherit hover:bg-gray-800 text-white border-white': darkMode,
           }"
         >
           Senden

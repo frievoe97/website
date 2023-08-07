@@ -9,7 +9,8 @@
           :class="{ 'text-black': !darkMode, 'text-white': darkMode }"
           class="text-4xl font-bold mb-4 px-8"
         >
-          Hey! I'm Friedrich and a Full-Stack-Developer
+          Hey! I'm Friedrich and a Full-Stack-Developer <br />
+          Still in progress...
         </h1>
       </div>
 

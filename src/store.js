@@ -2,7 +2,7 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    darkMode: false,
+    darkMode: true,
     selectedLanguage: "de",
   },
   mutations: {

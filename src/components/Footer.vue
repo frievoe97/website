@@ -7,9 +7,9 @@
         <p>Adresse, PLZ Stadt, Land</p>
         <!-- Weitere Impressum-Informationen hier -->
       </div>
-      <div>
+      <div class="md:ml-8">
         <h4 class="text-xl font-semibold mb-4">Links</h4>
-        <ul class="space-y-2">
+        <ul class="md:space-y-2">
           <li>
             <a href="#">Startseite</a>
           </li>
@@ -22,9 +22,9 @@
           <!-- Weitere Navigationslinks hier -->
         </ul>
       </div>
-      <div>
+      <div class="md:ml-8">
         <h4 class="text-xl font-semibold mb-4">Rechtliches</h4>
-        <ul class="space-y-2">
+        <ul class="md:space-y-2">
           <li>
             <a href="#">Datenschutz</a>
           </li>
