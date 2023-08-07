@@ -26,6 +26,6 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           dryRun: false
           forceUpload: true                         
-          localDir: '/dist'                         
+          localDir: './dist'                         
           remoteDir: '/website'                       
           exclude: '.git*,.DS_Store'
